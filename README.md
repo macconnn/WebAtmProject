@@ -1,7 +1,10 @@
 # webatm
 
 
-According the code below to create the `SQL database and tables`
+According the code below to create the `SQL database and tables` and follow the specified version below
+
+`Tomcat Version : 7.0.109`
+`JDK Version : 1.8.0`
 
 ## Step 1
 ```
