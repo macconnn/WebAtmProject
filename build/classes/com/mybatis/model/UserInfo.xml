@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.inter.UserOperation">
+  
+	<select id="SelectUserInfoById" parameterType="int" resultType="UserInfo">
+		select * from `UserInfo` where user_id = #{user_id}
+	</select>
+	
+	
+	<select id="SelectUserInfoPassword" parameterType="String" resultType="UserInfo">
+		select * from `UserInfo` where password = #{password}
+	</select>	
+	
+	<select id="SelectUserInfoByIdcard" parameterType="String" resultType="UserInfo">
+		select * from `UserInfo` where ID = #{ID}
+	</select>
+	
+		<select id="SelectUserInfoByAccount" parameterType="String" resultType="UserInfo">
+		select * from `UserInfo` where account = #{account}
+	</select>
+	
+
+	<select id="SelectUserInfoByAccountAndPassword" parameterType="String" resultType="UserInfo">
+		select * from `UserInfo` where account = #{account} and password = #{password}
+	</select>
+
+    <insert id="addUserInfo" parameterType="UserInfo" 
+        useGeneratedKeys="true" keyProperty="id"> 
+        insert into `UserInfo`(ID , name , account , password)  
+             values(#{ID} , #{name} , #{account} , #{password})  
+    </insert>
+    
+    <update id="updatepassword" parameterType="UserInfo">
+        update `UserInfo` set password=#{password} where user_id=#{user_id}
+    </update>   
+
+    
+</mapper>

@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script>
+function myFunctionAccountBalance() {
+	console.log($);
+	         $.ajax({
+	            type: 'GET',
+	            url: 'http://localhost:8080/WebAtmCastle/api/home/balance/account',
+	            dataType: "text",
+	            success: function(response) {                               
+	                     document.getElementById("res").innerHTML = "Account Balance : " + response;         
+	            },
+	            error: function(jqXHR, textStatus, errorThrown) {
+	                console.log(jqXHR +' : '+ textStatus +' : '+ errorThrown);             
+	            }
+	        });                 
+	}
+</script>
+<script>
+function myFunctionDebt() {
+	console.log($);
+	         $.ajax({
+	            type: 'GET',
+	            url: 'http://localhost:8080/WebAtmCastle/api/home/balance/debt',
+	            dataType: "text",
+	            success: function(response) {                               
+	                     document.getElementById("res").innerHTML = "Debt : " + response;         
+	            },
+	            error: function(jqXHR, textStatus, errorThrown) {
+	                console.log(jqXHR +' : '+ textStatus +' : '+ errorThrown);             
+	            }
+	        });                 
+	}
+</script>
+<title> Login Page </title>
+<style> 
+
+
+img{
+    display: block;
+  	margin: 0 auto;
+}
+input{
+       background-color: #4CAF50; 
+       width: 25%;
+        color: orange; 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none; 
+  }
+
+input:hover{
+        opacity: 0.7; 
+}
+  .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px;
+        margin: 10px 5px;
+    } 
+      
+   
+ .container { 
+        padding: 25px; 
+        background-color: lightblue;
+    } 
+button { 
+       background-color: #4CAF50; 
+       width: 25%;
+        color: orange; 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none; 
+        cursor: pointer; 
+        margin-left: auto;
+    	margin-right: auto;
+         } 
+ form { 
+        border: 3px solid #f1f1f1; 
+    } 
+ input[type=text], input[type=password] { 
+        width: 100%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid green; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px;
+        margin: 10px 5px;
+    } 
+      
+   
+ .container { 
+        width: 50%;
+        padding: 8px; 
+        background-color: lightblue;
+	  	margin-left: auto;
+    	margin-right: auto;
+    } 
+</style> 
+</head>  
+<body>  
+    <center> <h1> Web ATM </h1> </center> 
+    <div class="container" style="text-align:center;"> 
+            <button name="btnAccountBalance" onclick="myFunctionAccountBalance()">Balance Check</button> 
+            <button name="btnDebt" onclick="myFunctionDebt()">Debt Check</button> 
+			<p id="res">  </p>
+			<style>
+				<style>
+						a{
+							display:block;
+						}
+				</style>    
+				
+	    <div class="container" style="text-align:center;">
+        	<a href = "http://localhost:8080/WebAtmCastle/api/home">
+			<input type="button" value="Home"/>
+			</a>	     
+	    </div>  
+</body>   
+</html>
+
+ 
